@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:15
+    container_name: dwh_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: warehouse_db
+    ports:
+      - "5432:5432"
+    volumes:
+      # 1. Data Persistence (Internal database files)
+      - postgres_data:/var/lib/postgresql/data
+
+      # 2. Map local datasets into the container
+      - ./datasets:/mnt/datasets:ro # Read-only access
+
+      # 3. Map scripts folder
+      - ./scripts:/mnt/scripts
+
+      # 4. Auto-run SQL scripts on first startup (Optional)
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+
+volumes:
+  postgres_data:
