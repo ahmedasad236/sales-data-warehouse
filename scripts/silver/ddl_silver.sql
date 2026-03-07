@@ -3,8 +3,8 @@ CREATE TABLE IF NOT EXISTS silver.crm_cst_info (
     cst_key varchar(30),
     cst_first_name varchar(30),
     cst_last_name varchar(30),
-    cst_marital_status char,
-    cst_gndr char,
+    cst_marital_status varchar(30),
+    cst_gndr varchar(30),
     cst_create_date date,
     dwh_create_dt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
