@@ -81,11 +81,11 @@ BEGIN
     step_start_time := clock_timestamp();
 
     RAISE NOTICE '  >> Truncating Table: silver.crm_prd_info';
-    TRUNCATE TABLE silver.crm_prd_info; -- Fixed bug here
+    TRUNCATE TABLE silver.crm_prd_info;
 
     RAISE NOTICE '  >> Inserting Data into: silver.crm_prd_info';
     INSERT INTO silver.crm_prd_info  (
-        prd_id, prd_key, cat_id, prd_nm, prd_cost, prd_line, prd_start_dt, prd_end_dt
+        prd_id, cat_id, prd_key, prd_nm, prd_cost, prd_line, prd_start_dt, prd_end_dt
     )
     SELECT 
         prd_id,
@@ -116,7 +116,7 @@ BEGIN
     step_start_time := clock_timestamp();
 
     RAISE NOTICE '  >> Truncating Table: silver.crm_sales_details';
-    TRUNCATE TABLE silver.crm_sales_details; -- Fixed bug here
+    TRUNCATE TABLE silver.crm_sales_details;
 
     RAISE NOTICE '  >> Inserting Data into: silver.crm_sales_details';
     INSERT INTO silver.crm_sales_details (
@@ -153,7 +153,7 @@ BEGIN
     step_start_time := clock_timestamp();
 
     RAISE NOTICE '  >> Truncating Table: silver.erp_cust_az12';
-    TRUNCATE TABLE silver.erp_cust_az12; -- Fixed bug here
+    TRUNCATE TABLE silver.erp_cust_az12;
 
     RAISE NOTICE '  >> Inserting Data into: silver.erp_cust_az12';
     INSERT INTO silver.erp_cust_az12 (cid, bdate, gen)
@@ -178,7 +178,7 @@ BEGIN
     step_start_time := clock_timestamp();
 
     RAISE NOTICE '  >> Truncating Table: silver.erp_loc_a101';
-    TRUNCATE TABLE silver.erp_loc_a101; -- Fixed bug here
+    TRUNCATE TABLE silver.erp_loc_a101;
 
     RAISE NOTICE '  >> Inserting Data into: silver.erp_loc_a101';
     INSERT INTO silver.erp_loc_a101 (cid, cntry)
@@ -203,7 +203,7 @@ BEGIN
     step_start_time := clock_timestamp();
 
     RAISE NOTICE '  >> Truncating Table: silver.erp_px_cat_g1v2';
-    TRUNCATE TABLE silver.erp_px_cat_g1v2; -- Fixed bug here
+    TRUNCATE TABLE silver.erp_px_cat_g1v2;
 
     RAISE NOTICE '  >> Inserting Data into: silver.erp_px_cat_g1v2';
     INSERT INTO silver.erp_px_cat_g1v2 (id, cat, subcat, maintenance)
