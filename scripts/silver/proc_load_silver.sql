@@ -46,7 +46,7 @@ BEGIN
 
     RAISE NOTICE '  >> Inserting Data into: silver.crm_cst_info';
     INSERT INTO silver.crm_cst_info (
-        cst_id, cst_key, cst_first_name, cst_last_name, cst_marital_status, cst_gndr, cst_create_date
+        cst_id, cst_key, cst_first_name, cst_last_name, cst_gndr, cst_marital_status, cst_create_date
     )
     SELECT
         cst_id,
